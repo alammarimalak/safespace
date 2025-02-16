@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+      @keyframes fadeIn{
+        from { opacity: 0; 
+              transform: translateY(10px); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        }
+      }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+
+  <div class="dashboard-container" style="animation: fadeIn 0.5s ease-in-out;">
+    <a href="/TherapistPart/signedin_TH.html" alt="back" class="text-decoration-none ms-2" style="color:rgb(135, 206, 235) !important"><i class="fa-solid fa-arrow-left mx-2 mb-3" style="color:rgb(133, 133, 133) !important "></i>Back</a>
+    <div class="card card-custom mb-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h2 class="mb-0">Patient Report: Rinad Tabji</h2>
+            <p class="text-muted mb-0">Last updated: 2 hours ago</p>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-info disabled">
+              <i class="fas fa-file-pdf mx-3"></i>Export Report
+            </button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="mb-1"><strong>Age:</strong> 17</p>
+            <p class="mb-1"><strong>Gender:</strong> Female</p>
+          </div>
+          <div class="col-md-3">
+            <p class="mb-1"><strong>Last Session:</strong> 3 days ago</p>
+            <p class="mb-1"><strong>Next Appointment:</strong> Tomorrow</p>
+          </div>
+          <div class="col-md-3">
+            <p class="mb-1"><strong>Treatment Plan:</strong> Active</p>
+            <p class="mb-1"><strong>Risk Level:</strong> Medium</p>
+          </div>
+          <div class="col-md-3">
+            <div class="progress" style="height: 25px;">
+              <div class="progress-bar bg-info" role="progressbar" style="width: 65%">65% Progress</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="animation: fadeIn 0.5s ease-in-out;">
+      <div class="col-md-8">
+        <div class="card card-custom mb-4">
+          <div class="card-header bg-info text-white" style="background-color: rgb(135, 206, 235) !important; border:none;">
+            <ul class="nav nav-tabs card-header-tabs" >
+              <li class="nav-item">
+                <a class="nav-link active" href="#overview">Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#sessions">Session History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#assessments">Assessments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#documents">Documents</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card-body">
+            <div id="overview" class="tab-pane active">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5><i class="fas fa-chart-line mx-2"></i>Mood Trend</h5>
+                  <canvas id="moodChart" style="height: 200px;"></canvas>
+                </div>
+                <div class="col-md-6">
+                  <h5><i class="fas fa-clipboard-list mx-2"></i>Key Metrics</h5>
+                  <div class="list-group">
+                    <div class="list-group-item d-flex justify-content-between">
+                      <span>PHQ-9 Score</span>
+                      <span class="badge bg-info">14/27</span>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between">
+                      <span>GAD-7 Score</span>
+                      <span class="badge bg-info">10/21</span>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between">
+                      <span>Sleep Quality</span>
+                      <span class="badge bg-info">6.2/10</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <h5><i class="fas fa-file-medical mx-2"></i>Treatment Plan Status</h5>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card bg-light">
+                    <div class="card-body text-center">
+                      <h3 class="text-info">8/12</h3>
+                      <small>Completed Sessions</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card bg-light">
+                    <div class="card-body text-center">
+                      <h3 class="text-info">85%</h3>
+                      <small>Exercise Compliance</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card bg-light">
+                    <div class="card-body text-center">
+                      <h3 class="text-info">3</h3>
+                      <small>Pending Actions</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-custom mb-4">
+          <div class="card-header bg-primary text-white" style="background-color: rgb(135, 206, 235) !important; border:none;">
+            <h5 class="mb-0"><i class="fas fa-bolt mx-2"></i>Quick Actions</h5>
+          </div>
+          <div class="card-body">
+            <button class="btn btn-outline-info w-100 mb-2 disabled" >
+              <i class="fas fa-plus mx-2"></i>Add Session Note
+            </button>
+            <button class="btn btn-outline-info w-100 mb-2 disabled">
+              <i class="fas fa-prescription mx-2"></i>Update Treatment Plan
+            </button>
+            <button class="btn btn-outline-info w-100 mb-2 disabled">
+              <i class="fas fa-exclamation-triangle mx-2"></i>Flag Concern
+            </button>
+            <button class="btn btn-outline-info w-100 mb-2 disabled">
+              <i class="fas fa-share mx-2"></i>Share Report
+            </button>
+          </div>
+        </div>
+
+        <div class="card card-custom">
+          <div class="card-header bg-success text-white" style="background-color: rgb(135, 206, 235) !important; border:none;">
+            <h5 class="mb-0"><i class="fas fa-history mx-2"></i>Recent Activity</h5>
+          </div>
+          <div class="card-body">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <small>2 hours ago</small>
+                  <p>Updated medication list</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <small>1 day ago</small>
+                  <p>Completed PHQ-9 assessment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-custom mt-4" style="animation: fadeIn 0.5s ease-in-out;">
+      <div class="card-header bg-warning text-light" style="background-color: rgb(135, 206, 235) !important; border:none;">
+        <h5 class="mb-0"><i class="fas fa-file-medical-alt mx-2"></i>Clinical Notes</h5>
+      </div>
+      <div class="card-body">
+        <div class="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button disabled">Session Notes (2023-10-15)</button>
+            </h2>
+            <div class="accordion-body">
+              <p>Patient reported improved sleep patterns but expressed ongoing work-related stress...</p>
+              <small class="text-muted">Dr. X</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Sample Mood Chart
+  const ctx = document.getElementById('moodChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Mood Level',
+        data: [3, 5, 4, 7, 6, 8],
+        borderColor: '#4e73df',
+        tension: 0.4
+      }]
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

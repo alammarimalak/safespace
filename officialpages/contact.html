@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Space - Home Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+      }
+      header{
+        margin-top: -30px;
+      }
+      body {
+        background-color: #f0f0eb;
+        padding-top: 80px; 
+      }
+      .dashboard-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        margin-top: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .card-custom {
+        background-color: beige;
+        color: black;
+      }
+      nav.navbar {
+        background-color: rgba(135, 206, 235);
+        padding: 15px;
+        z-index: 1050; 
+      }
+      .navbar-nav .nav-link,
+      .nav-link {
+        color: white !important;
+      }
+      .nav-link:hover,
+      .text-white:hover,
+      .navbar-toggler-icon:hover {
+        color: rgb(109, 189, 109) !important;
+      }
+      .nav-link i {
+        margin-right: 8px;
+      }
+      .navbar-toggler {
+        display: block !important;
+        margin-left: auto;
+      }
+      .navbar-toggler:hover {
+        cursor: pointer;
+      }
+      .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background-color: rgb(135, 206, 235);
+        width: 250px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+      .menu-overlay.show {
+        display: block;
+      }
+      nav > a > img:hover {
+        text-decoration: underline;
+        text-decoration-color: rgb(109, 189, 109) !important;
+      }
+      .link {
+        text-decoration: none;
+      }
+      
+      .overlay-content {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-shadow: 2px 2px 5px rgba(9, 0, 0, 0.5);
+      }
+      section {
+      padding: 40px 0;
+      }
+      
+      footer{
+        background-color: rgb(135, 206, 235);
+        padding: 45px 0;
+      }
+
+      div > ul > li > a > i.fa-facebook:hover {
+      color: rgb(0, 68, 255);
+      }
+
+      div > ul > li > a > i.fa-instagram:hover {
+        color: rgb(255, 0, 255);
+      }
+
+      div > ul > li > a > i.fa-whatsapp:hover {
+        color: rgb(8, 169, 43);
+      }
+
+      div > ul > li > a > i.fa-envelope:hover {
+        color: rgb(255, 0, 0);
+      }
+      .text-danger{
+        color:rgb(135, 206, 235) !important;
+      }
+      .btn-danger{
+        background-color:rgb(135, 206, 235) !important;
+        border:none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="index.html">
+          <img src="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png" alt="logo" width="35px" id="logo" class="link" style="padding-left: 5px;" />
+        </a>
+        <div class="d-flex align-items-center mx-auto">
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="/officialpages/index.html"><i class="fas fa-home"></i></a>
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="/officialpages/about.html"><i class="fas fa-solid fa-question"></i></a>
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="/officialpages/service.html"><i class="fas fa-solid fa-briefcase"></i></a>
+          <a class="nav-link ps-2 px-sm-2 px-xl-4" href="/officialpages/contact.html"><i class="fas fa-address-card"></i></a>
+        </div>
+        <div id="google_translate_element"></div>
+        <button class="navbar-toggler ms-2" type="button" id="menuToggle">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="menu-overlay" id="menuOverlay">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/LOG/login.html"><i class="fas fa-user"></i>Log in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/LOG/selection.html"><i class="fas fa-solid fa-right-to-bracket"></i>Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+      <section class="text-center text-light py-5" style="background-image: url('/pictures/duy-pham-Cecb0_8Hx-o-unsplash.jpg'); background-size: cover; height: 80vh;">
+        <div class="container">
+            <h2 class="display-4 pt-5 fw-semibold">Welcome to SafeSpace</h2>
+            <p class="lead">1st Moroccan platform for mental well-being and support
+            </p>
+        </div>
+      </section>
+
+      <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-4 text-center">
+                        <i class="fas fa-map-marker-alt fa-2x text-danger"></i>
+                        <h5 class="fw-bold mt-3">Address</h5>
+                        <p class="mb-1">Rabat-sale-kenitra</p>
+                        <p>Province Kenitra</p>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <i class="fas fa-phone-alt fa-2x text-danger"></i>
+                        <h5 class="fw-bold mt-3">Phone</h5>
+                        <p class="mb-1">+212 5xxxxxxxx</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-envelope fa-2x text-danger"></i>
+                        <h5 class="fw-bold mt-3">Email</h5>
+                        <p>example@safespace.ma</p>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h4 class="fw-bold text-danger">Send us a message</h4>
+                    <p class="mb-4">If you have any questions or comments about our website or if you would like to obtain additional information, please do not hesitate to contact us.</p>
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Enter your name" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Message" id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger" id="submit-btn" disabled>Envoyez</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+  <footer class="text-center text-light py-4">
+    <div class="container">
+        <ul class="list-unstyled d-flex justify-content-center mb-3">
+            <li class="mx-3">
+                <a href="#" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="#" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="#" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="mailto:example@safespace.ma" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+        <p class="mb-0">&copy; 2025 SafeSpace Morocco. All Rights Reserved.</p>
+    </div>
+</footer>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="scriptlang.js"></script>
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("menuOverlay").classList.toggle("show");
+        });
+
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("menuOverlay");
+        const button = document.getElementById("menuToggle");
+        if (
+          !menu.contains(event.target) &&
+          !button.contains(event.target) &&
+          menu.classList.contains("show")
+        ) {
+          menu.classList.remove("show");
+        }
+      });
+    </script>
+      <script>
+      function checkForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const submitButton = document.getElementById('submit-btn');
+
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (name && email && message && emailPattern.test(email)) {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+
+    document.getElementById('name').addEventListener('input', checkForm);
+    document.getElementById('email').addEventListener('input', checkForm);
+    document.getElementById('message').addEventListener('input', checkForm);
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var myModal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+        myModal.show();
+    });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+
+    <style>
+        .sidebar {
+            height: 100vh;
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .patient-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        .hover-effect:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        .btn-primary{
+            background-color: rgb(135, 206, 235) !important;
+            border:none;
+        }
+
+        .primary{
+            color: rgb(135, 206, 235) !important;
+        }
+        a > i.fas{
+            color: rgb(135, 206, 235) !important;
+        }
+        a{
+            color: rgb(135, 206, 235) !important;
+        }
+
+        a>i.fas:hover, a:hover{
+            color: rgb(92, 192, 231) !important;
+        }
+        .btn-primary:hover{
+            background-color: rgb(92, 192, 231) !important;
+        }
+
+        .bg-success{
+            background-color:#b6d19d !important;
+        }
+
+        .bg-danger{
+            background-color: rgb(255, 108, 108) !important;
+        }
+
+      @keyframes fadeIn{
+        from { opacity: 0; 
+              transform: translateY(10px); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="animation: fadeIn 0.5s ease-in-out;">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar p-3">
+                <h4 class="mb-4">Clinic Portal</h4>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="/TherapistPart/student_list.html"><i class="fas fa-user-friends me-2"></i> Patients</a>
+                    <a class="nav-link" href="/TherapistPart/schedule.html"><i class="fas fa-calendar-alt me-2"></i> Appointments</a>
+                    <a class="nav-link" href="/TherapistPart/report.html"><i class="fas fa-file-medical me-2"></i> Reports</a>
+                    <a class="nav-link" href="#"><i class="fas fa-cog me-2 disabled"></i> Settings</a>
+                    <a href="/TherapistPart/signedin_TH.html" alt="back" class="nav-link ps-3"><i class="fa-solid fa-arrow-left me-2"></i>Back</a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Student List</h2>
+                    <div class="d-flex gap-2">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search Students...">
+                        </div>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newPatientModal">
+                            <i class="fas fa-plus me-2"></i>New Student
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Patient Table -->
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Student</th>
+                                <th>ID</th>
+                                <th>Last Visit</th>
+                                <th>Treatment Progress</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Patient Data -->
+                            <tr class="hover-effect">
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="/pictures/pexels-danxavier-1239288.jpg" class="patient-avatar me-3" alt="Patient">
+                                        <div>
+                                            <div class="fw-bold">Rinad Tabji</div>
+                                            <div class="text-muted">12th grade</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#ET-1234</td>
+                                <td>2024-12-31</td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%" 
+                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary me-2" title="View Details" onclick="window.location.href">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info me-2" title="Progress Report" onclick="window.location.href='/TherapistPart/report.html';">
+                                        <i class="fas fa-chart-line"></i>
+                                    </button>                                    
+                                    <button class="btn btn-sm btn-outline-secondary" title="Treatment History">
+                                        <i class="fas fa-history"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover-effect">
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="/pictures/Screenshot__586_-removebg-preview.png" class="patient-avatar me-3" alt="Patient">
+                                        <div>
+                                            <div class="fw-bold">Malak Al ammari</div>
+                                            <div class="text-muted">10th grade</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>#ET-1233</td>
+                                <td>2024-12-10</td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 34%" 
+                                            aria-valuenow="34" aria-valuemin="0" aria-valuemax="100">34%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary me-2" title="View Details" onclick="window.location.href='/TherapistPart/report.html';">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info me-2" title="Progress Report" onclick="window.location.href='/TherapistPart/report.html';">
+                                        <i class="fas fa-chart-line"></i>
+                                    </button>                                    
+                                    <button class="btn btn-sm btn-outline-secondary" title="Treatment History">
+                                        <i class="fas fa-history"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Add more patient rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Patient Modal -->
+    <div class="modal fade" id="newPatientModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Patient Registration</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Contact Number</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Medical History</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Register Patient</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple search functionality
+        document.querySelector('input[type="search"]').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            document.querySelectorAll('tbody tr').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Space - Home Page</title>
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"  rel="stylesheet"/>
+    <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+      }
+      header{
+        margin-top: -30px;
+      }
+      body {
+        background-color: #f0f0eb;
+        padding-top: 80px; 
+      }
+      .dashboard-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        margin-top: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .card-custom {
+        background-color: beige;
+        color: black;
+      }
+      nav.navbar {
+        background-color: rgba(135, 206, 235);
+        padding: 15px;
+        z-index: 1050; 
+      }
+      .navbar-nav .nav-link,
+      .nav-link {
+        color: white !important;
+      }
+      .nav-link:hover,
+      .text-white:hover,
+      .navbar-toggler-icon:hover {
+        color: rgb(109, 189, 109) !important;
+      }
+      .nav-link i {
+        margin-right: 8px;
+      }
+      .navbar-toggler {
+        display: block !important;
+        margin-left: auto;
+      }
+      .navbar-toggler:hover {
+        cursor: pointer;
+      }
+      .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background-color: rgb(135, 206, 235);
+        width: 250px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+      .menu-overlay.show {
+        display: block;
+      }
+      nav > a > img:hover {
+        text-decoration: underline;
+        text-decoration-color: rgb(109, 189, 109) !important;
+      }
+      .link {
+        text-decoration: none;
+      }
+      
+      .overlay-content {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-shadow: 2px 2px 5px rgba(9, 0, 0, 0.5);
+      }
+      footer{
+        background-color: rgb(135, 206, 235);
+        padding: 45px ;
+
+      }
+
+      .text-primary{
+        color:rgb(135, 206, 235) !important;
+      }
+      div > ul > li > a > i.fa-facebook:hover {
+      color: rgb(0, 68, 255);
+      }
+
+      div > ul > li > a > i.fa-instagram:hover {
+        color: rgb(255, 0, 255);
+      }
+
+      div > ul > li > a > i.fa-whatsapp:hover {
+        color: rgb(8, 169, 43);
+      }
+
+      div > ul > li > a > i.fa-envelope:hover {
+        color: rgb(255, 0, 0);
+      }
+
+      .carousel{
+        margin: 0 40px;
+        background-color: white;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding:20px 35px;
+      }
+
+      .carousel-item img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; 
+        object-fit: cover; 
+        display: block; 
+        margin: auto;
+        
+      }
+      .carousel-item .carousel-caption {
+      text-align: left;
+      margin-right: 70px; 
+    }
+
+    .custom-arrow {
+    background-color: lightblue;
+    background-image: none; 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-control-prev-icon::after,
+  .carousel-control-next-icon::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid lightblue;
+    border-width: 0 3px 3px 0;
+  }
+
+  .carousel-control-prev-icon::after {
+    transform: rotate(135deg); 
+  }
+
+  .carousel-control-next-icon::after {
+    transform: rotate(-45deg); 
+  }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="index.html">
+          <img src="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png" alt="logo" width="35px" id="logo" class="link" style="padding-left: 5px;" />
+        </a>
+        <div class="d-flex align-items-center mx-auto">
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="/officialpages/index.html"><i class="fas fa-home"></i></a>
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="/officialpages/about.html"><i class="fas fa-solid fa-question"></i></a>
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="/officialpages/service.html"><i class="fas fa-solid fa-briefcase"></i></a>
+          <a class="nav-link ps-2 px-sm-2 px-xl-4" href="/officialpages/contact.html"><i class="fas fa-address-card"></i></a>
+        </div>
+        <div id="google_translate_element"></div>
+        <button class="navbar-toggler ms-2" type="button" id="menuToggle">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="menu-overlay" id="menuOverlay">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/LOG/login.html"><i class="fas fa-user"></i>Log in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/LOG/selection.html"><i class="fas fa-solid fa-right-to-bracket"></i>Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+      <section class="text-center text-light py-5" style="background-image: url('/pictures/duy-pham-Cecb0_8Hx-o-unsplash.jpg'); background-size: cover; height: 80vh;">
+        <div class="container">
+            <h2 class="display-4 pt-5 fw-semibold">Welcome to SafeSpace</h2>
+            <p class="lead">1st Moroccan platform for mental well-being and support
+            </p>
+        </div>
+      </section>
+
+  <div class="container py-5">
+    <div class="py-4 px-5 bg-white rounded-3 shadow-sm mb-4">
+      <h3 class="text-primary fw-bold">What is SafeSpace?</h3>
+      <p class="text-muted">
+        SafeSpace is a virtual platform designed to address the growing mental health challenges 
+        among Moroccan high school students. By providing an intermediary between schools and psychologists, 
+        SafeSpace offers a supportive environment where students can engage in interactive activities aimed 
+        at reducing stress and anxiety. The platform is a tool for students to improve their mental health 
+        while fostering connections with peers, parents, and teachers.
+      </p>
+    </div>
+  
+    <div class="py-4 px-5 bg-white rounded-3 shadow-sm mb-4">
+      <h3 class="text-primary fw-bold">The Benefit of SafeSpace</h3>
+      <p class="text-muted">
+        SafeSpace aims to tackle these issues by providing students with activities that reduce stress 
+        and foster emotional well-being. Through engaging, fun activities and a supportive environment, 
+        students will gain access to various tools that help them relax, build social skills, and improve 
+        their academic performance. Additionally, the platform strengthens relationships with parents and 
+        enhances overall social development.
+      </p>
+    </div>
+  
+    <div class="py-4 px-5 bg-white rounded-3 shadow-sm text-muted mb-4">
+      <h3 class="text-primary fw-bold">Our Vision</h3>
+      <p>
+        Our vision is to make SafeSpace accessible to all schools across Morocco. By addressing the mental health 
+        challenges that students face, we aim to reduce stress, anxiety, and depression, thus improving both 
+        students' academic performance and overall well-being.
+      </p>
+    </div>
+  
+    <div class="py-4 px-5 bg-white rounded-3 shadow-sm">
+      <h3 class="text-primary fw-bold">Our Mission</h3>
+      <p class="text-muted">
+        Our mission is to save significantly more students from severe mental health struggles every year, 
+        increase parental engagement, and raise teacher awareness. We strive to create a stronger, more supportive 
+        environment for students—one that enhances their mental health, builds positive social skills, and improves 
+        relationships with teachers and parents.
+      </p>
+    </div>
+  </div>
+  
+  <div id="teamCarousel" class="carousel slide mx-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- First Slide -->
+      <div class="carousel-item active">
+        <div class="container py-5">
+          <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+              <img src="/pictures/DSC_1959 copie.jpg" class="img-fluid rounded-circle" alt="Project Manager">
+            </div>
+            <div class="col-lg-8 ps-lg-4">
+              <h3 class="display-4 text-primary fw-bold">Rinad Tabji</h3>
+              <h5 class="text-muted">2nd year marketing student at UIT</h5>
+              <h4 class="text-muted">Project Manager</h4>
+              <p class="text-muted">SafeSpace, for me, is more than just a project. It's a place where everyone can 
+                feel understood, heard, and supported without judgment. I have always believed that no one should
+                 be trapped in their own thoughts, paralyzed by psychological barriers. This project was born from 
+                 that conviction: to offer a space where people can speak freely, move forward without fear, and find 
+                 the strength to overcome what holds them back. Because sometimes, everything starts with a simple safe 
+                 space to dare to be yourself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="carousel-item">
+        <div class="container py-5">
+          <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+              <img src="/pictures/PHOTO-2025-02-14-00-01-37-removebg-preview.png" class="img-fluid rounded-circle" alt="Vice-Project Manager">
+            </div>
+            <div class="col-lg-8 ps-lg-4">
+              <h3 class="display-4 text-primary fw-bold">Jannat Lotfi</h3>
+              <h5 class="text-muted">3rd year in international law at UIT</h5>
+              <h4 class="text-muted">Project Manager</h4>
+              <p class="text-muted">As Vice Project Manager at SafeSpace, I balanced strategy and execution 
+                to align our vision with real impact. I coordinated with psychologists, developers, and 
+                educators to refine the platform's experience. Every decision was about more than just 
+                features—it was about empowering students. Seeing them open up and find support made the 
+                challenges worthwhile. Leading alongside passionate individuals, I learned that impact comes 
+                from teamwork and resilience. SafeSpace wasn't just a project; it was a movement to change lives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="carousel-item">
+        <div class="container py-5">
+          <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+              <img src="/pictures/Screenshot__586_-removebg-preview.png" class="img-fluid rounded-circle" alt="Front-End Developer">
+            </div>
+            <div class="col-lg-8 ps-lg-4">
+              <h3 class="display-4 text-primary fw-bold">Malak Al ammari</h3>
+              <h5 class="text-muted">3rd year Computer Science student at UIT</h5>
+              <h4 class="text-muted">Front-End Developer</h4>
+              <p class="text-muted">As a front-end developer at SafeSpace, I had an incredible experience working
+                 with my team. What made this journey even more exciting was that we approached the project as a startup 
+                 rather than just an initiative within an NGO. Beyond the project itself, each of us carried different 
+                 wounds from our high school years, but what united us was our shared determination to make a difference. T
+                 oday, here I am, committed to changing high school students' perception of life into this upcoming generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden custom-arrow">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden custom-arrow">Next</span>
+    </button>
+  </div>
+  
+  <!-- Optional Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2"></button>
+  </div>
+  
+    <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon custom-arrow" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon custom-arrow" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  
+
+    <footer class="text-center text-light py-4">
+      <div class="container">
+          <ul class="list-unstyled d-flex justify-content-center mb-3">
+              <li class="mx-3">
+                  <a href="#" class="text-light fs-4" style="cursor:not-allowed">
+                      <i class="fa-brands fa-facebook"></i>
+                  </a>
+              </li>
+              <li class="mx-3">
+                  <a href="#" class="text-light fs-4" style="cursor:not-allowed">
+                      <i class="fa-brands fa-instagram"></i>
+                  </a>
+              </li>
+              <li class="mx-3">
+                  <a href="#" class="text-light fs-4" style="cursor:not-allowed">
+                      <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+              </li>
+              <li class="mx-3">
+                  <a href="mailto:example@safespace.ma" class="text-light fs-4" style="cursor:not-allowed">
+                      <i class="fa-solid fa-envelope"></i>
+                  </a>
+              </li>
+          </ul>
+          <p class="mb-0">&copy; 2025 SafeSpace Morocco. All Rights Reserved.</p>
+      </div>
+  </footer>
+   <script src="scriptlang.js"></script>
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("menuOverlay").classList.toggle("show");
+        });
+
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("menuOverlay");
+        const button = document.getElementById("menuToggle");
+        if (
+          !menu.contains(event.target) &&
+          !button.contains(event.target) &&
+          menu.classList.contains("show")
+        ) {
+          menu.classList.remove("show");
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

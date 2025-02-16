@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeSpace School Partnership Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+  <style>
+    .form-container { 
+        max-width: 800px; 
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    .form-section { 
+        margin-bottom: 25px;
+        padding: 15px; 
+        border: 1px solid #ddd; 
+    }
+    label { 
+        display: block; 
+        margin: 10px 0; 
+    }
+    .required { 
+        color: red; 
+    }
+
+    :root {
+            --primary-color: #7795cd;
+            --secondary-color: rgba(135, 206, 235);
+            --accent-color: #73b1d7;
+            --background-color: #F5F6F7;
+        }
+
+        body {
+            margin-top: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: #444;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            margin-top:30px;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1:before {
+            content: "🛡️";
+            font-size: 1.8em;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            border: 1px solid #eaeef2;
+            transition: transform 0.2s ease;
+        }
+
+        .form-section:hover {
+            transform: translateX(5px);
+        }
+
+        label {
+            display: block;
+            margin: 1rem 0;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 2px solid #e0e4e8;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(124, 152, 170, 0.1);
+        }
+
+        fieldset {
+            border: 1px solid #e0e4e8;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        legend {
+            color: var(--secondary-color);
+            padding: 0 0.5rem;
+            font-weight: 500;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .required {
+            color: #E63946;
+            font-size: 0.9em;
+        }
+
+        small {
+            color: #666;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .confidentiality-note {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-left: 4px solid var(--accent-color);
+            margin-top: 2rem;
+            font-size: 0.9em;
+        }
+
+        a[alt="back"]{
+          color: rgb(167, 166, 166);
+        }
+        a[alt="back"]:hover{
+          color:rgb(148, 148, 148);
+        }
+        i{
+          padding-left:50px;
+          padding-top: 30px;    
+        }
+</style>
+</head>
+<body>
+    <a href="/officialpages/service.html" alt="back"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="form-container">
+        <h1>SafeSpace School Partnership Registration</h1>
+        <h3>Kenitra Mental Health Collaboration Initiative</h3>
+        
+        <form action="/submit" method="POST">
+            <div class="form-section">
+                <h2>School Information</h2>
+                
+                <label>School Name<span class="required">*</span>:
+                    <input type="text" name="school_name" required>
+                </label>
+
+                <label>Location in Kenitra<span class="required">*</span>:
+                    <input type="text" name="location" required>
+                </label>
+
+                <label>School Address<span class="required">*</span>:
+                    <textarea name="address" required></textarea>
+                </label>
+
+                <label>Phone Number<span class="required">*</span>:
+                    <input type="tel" name="phone" pattern="[0]{1}[0-9]{9}" required>
+                    <small>Format: 05XXXXXXXX or 06XXXXXXXX</small>
+                </label>
+
+                <label>Official Email<span class="required">*</span>:
+                    <input type="email" name="email" required>
+                </label>
+            </div>
+
+            <div class="form-section">
+                <h2>School Leadership</h2>
+                
+                <label>Director's Full Name<span class="required">*</span>:
+                    <input type="text" name="director_name" required>
+                </label>
+
+                <label>Director's Contact Number:
+                    <input type="tel" name="director_phone">
+                </label>
+
+                <label>School Owner/Proprietor Name (if different):
+                    <input type="text" name="owner_name">
+                </label>
+            </div>
+
+            <div class="form-section">
+                <h2>School Profile</h2>
+                
+                <label>Total Number of Students<span class="required">*</span>:
+                    <input type="number" name="student_count" min="0" required>
+                </label>
+
+                <label>Number of Teaching Staff:
+                    <input type="number" name="staff_count" min="0">
+                </label>
+
+                <label>School Type:
+                    <select name="school_type">
+                        <option value="public">Public School</option>
+                        <option value="private">Private School</option>
+                        <option value="semi-private">Semi-Private School</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="form-section">
+                <h2>Collaboration Details</h2>
+                
+                <label>Current Mental Health Resources:
+                    <textarea name="current_resources"></textarea>
+                    <small>Please describe any existing mental health programs or staff</small>
+                </label>
+
+                <fieldset>
+                    <legend>Preferred Collaboration Types (Check all that apply)</legend>
+                    <label><input type="checkbox" name="workshops"> Student Workshops</label>
+                    <label><input type="checkbox" name="parent_sessions"> Parent Education Sessions</label>
+                    <label><input type="checkbox" name="teacher_training"> Staff Training Programs</label>
+                    <label><input type="checkbox" name="counseling"> On-site Counseling Services</label>
+                </fieldset>
+
+                <label>Preferred Collaboration Start Date:
+                    <input type="date" name="start_date">
+                </label>
+            </div>
+
+            <div class="form-section">
+                <label>Additional Comments:
+                    <textarea name="comments"></textarea>
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input type="checkbox" required> I confirm that the information provided is accurate<span class="required">*</span>
+                </label>
+                <br>
+                <button type="submit">Submit Partnership Request</button>
+            </div>
+        </form>
+
+        <p style="margin-top: 20px; font-size: 0.9em;">
+            <em>All information will be kept confidential and used solely for coordination of mental health services. 
+            We will contact you within 5 business days of submission.</em>
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

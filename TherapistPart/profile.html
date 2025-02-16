@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+  <style>
+    .bg-primary{
+      background-color: rgb(135, 206, 235) !important;
+      border:none;
+    }
+
+    .btn-primary{
+      background-color: rgb(135, 206, 235) !important;
+      border:none;
+    }
+
+      @keyframes fadeIn{
+        from { opacity: 0; 
+              transform: translateY(10px); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        }
+      }
+  </style>
+</head>
+<body class="bg-light" style="animation: fadeIn 0.5s ease-in-out;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <nav class="nav flex-column settings-nav" >
+                <a class="nav-link active disabled" href="#personal" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important ">
+                  <i class="fas fa-user-md mx-2"></i>Profile
+                </a>
+                <a class="nav-link disabled" href="#professional" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important ">
+                  <i class="fas fa-briefcase mx-2"></i>Professional
+                </a>
+                <a class="nav-link disabled" href="#security" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important ">
+                  <i class="fas fa-shield-alt mx-2"></i>Security
+                </a>
+                <a class="nav-link disabled" href="#preferences" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important ">
+                  <i class="fas fa-cogs mx-2"></i>Preferences
+                </a>
+                <a href="/TherapistPart/signedin_TH.html" alt="back" class=" nav-link text-decoration-none ms-2" style="color:rgb(135, 206, 235) !important">
+                  <i class="fa-solid fa-arrow-left mx-2 mb-3" style="color:rgb(135, 206, 235)!important "></i>Back</a>
+
+              </nav>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="personal">
+              <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                  <h5 class="mb-0 me-2"><i class="fas fa-user-edit me-2"></i>Personal Information</h5>
+                </div>
+                <div class="card-body">
+                  <div class="text-center mb-4">
+                    <div class="position-relative d-inline-block">
+                      <img src="/pictures/th.jpg" class="rounded-circle" width="150px" height="120px" alt="Profile">
+                      <button class="btn btn-sm btn-secondary position-absolute bottom-0 end-0 rounded-circle" style="background-color: rgb(135, 206, 235) !important; border:none;">
+                        <i class="fas fa-camera"></i>
+                      </button>
+                    </div>
+                  </div>
+  
+                  <form>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" value="name" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" value="surname" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" value="example@gmail.com" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" value="+212 623-539572">
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Bio</label>
+                        <textarea class="form-control" rows="4">Licensed clinical psychologist specializing in cognitive behavioral therapy...</textarea>
+                      </div>
+                      <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+  
+            <div class="tab-pane fade" id="professional">
+              <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                  <h5 class="mb-0"><i class="fas fa-certificate me-2"></i>Professional Details</h5>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label">License Number</label>
+                        <input type="text" class="form-control" value="PSY-123456" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Specialization</label>
+                        <select class="form-select" multiple>
+                          <option selected>Cognitive Behavioral Therapy</option>
+                          <option>Trauma Therapy</option>
+                          <option>Marriage Counseling</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Qualifications</label>
+                        <div class="form-control h-auto">
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>PhD in Clinical Psychology</span>
+                            <button class="btn btn-sm btn-link text-danger">
+                              <i class="fas fa-times"></i>
+                            </button>
+                          </div>
+                          <button class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-plus me-2"></i>Add Qualification
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-primary">Update Credentials</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+  
+            <div class="tab-pane fade" id="security">
+              <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                  <h5 class="mb-0"><i class="fas fa-shield-alt me-2"></i>Account Security</h5>
+                </div>
+                <div class="card-body">
+                  <div class="list-group">
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                      <div>
+                        <h6 class="mb-1">Password</h6>
+                        <small class="text-muted">Last changed 3 months ago</small>
+                      </div>
+                      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#passwordModal">
+                        Change Password
+                      </button>
+                    </div>
+                    
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                      <div>
+                        <h6 class="mb-1">Two-Factor Authentication</h6>
+                        <small class="text-muted">Add an extra layer of security</small>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="twoFactorSwitch">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="tab-pane fade" id="preferences">
+              <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0"><i class="fas fa-sliders-h me-2"></i>Session Preferences</h5>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label">Default Session Duration</label>
+                        <select class="form-select">
+                          <option>45 minutes</option>
+                          <option selected>60 minutes</option>
+                          <option>90 minutes</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Cancellation Notice</label>
+                        <select class="form-select">
+                          <option>24 hours</option>
+                          <option selected>48 hours</option>
+                          <option>72 hours</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Communication Preferences</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                          <label class="form-check-label" for="emailNotifications">
+                            Email Notifications
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="smsNotifications">
+                          <label class="form-check-label" for="smsNotifications">
+                            SMS Notifications
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-primary">Save Preferences</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal fade" id="passwordModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Change Password</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Current Password</label>
+                <input type="password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">New Password</label>
+                <input type="password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Confirm New Password</label>
+                <input type="password" class="form-control" required>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-primary">Update Password</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const triggerTabList = document.querySelectorAll('#myTab button')
+      triggerTabList.forEach(triggerEl => {
+        const tabTrigger = new bootstrap.Tab(triggerEl)
+        triggerEl.addEventListener('click', event => {
+          event.preventDefault()
+          tabTrigger.show()
+        })
+      })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </body>
+</html>

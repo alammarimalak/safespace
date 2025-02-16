@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+      @keyframes fadee{
+        from { opacity: 0; 
+              transform: translateY(10px); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        }
+      }
+  </style>
+</head>
+<body>
+    <div class="container" style="animation: fadee 0.5s ease-in-out;">
+        <div class="dashboard-container">
+          <h2 class="text-center mb-4">Settings & Privacy</h2>
+          
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <nav class="nav flex-column settings-nav">
+                    <a class="nav-link active disabled" href="#account" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important;">
+                      <i class="fas fa-user-cog mx-2"></i>Account
+                    </a>
+                    <a class="nav-link disabled" href="#privacy" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important;">
+                      <i class="fas fa-shield-alt mx-2"></i>Privacy
+                    </a>
+                    <a class="nav-link disabled" href="#notifications" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important;">
+                      <i class="fas fa-bell mx-2"></i>Notifications
+                    </a>
+                    <a class="nav-link disabled" href="#security" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important;">
+                      <i class="fas fa-lock mx-2"></i>Security
+                    </a>
+                    <a class="nav-link disabled" href="#data" data-bs-toggle="tab" style="color:rgb(135, 206, 235) !important;">
+                      <i class="fas fa-database mx-2"></i>Data
+                    </a>
+                    <a href="/studentPart/signed_in.html" alt="back" class=" nav-link text-decoration-none ms-2" style="color:rgb(135, 206, 235) !important">
+                      <i class="fa-solid fa-arrow-left mx-2 mb-3" style="color:rgb(135, 206, 235)!important "></i>Back</a>
+                  </nav>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-9">
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="account">
+                  <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white" style="background-color: rgb(135, 206, 235) !important;">
+                      <h5 class="mb-0"><i class="fas fa-user-edit mx-2"></i>Account Settings</h5>
+                    </div>
+                    <div class="card-body">
+                      <form>
+                        <div class="row g-3 mb-4">
+                          <div class="col-md-6">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" value="Rinad Tabji" required>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="form-label">Profile Picture</label>
+                            <div class="d-flex align-items-center">
+                              <img src="/pictures/pexels-danxavier-1239288.jpg" class="rounded-circle me-3" width="60" alt="Avatar">
+                              <input type="file" class="form-control" accept="image/*">
+                            </div>
+                          </div>
+                        </div>
+      
+                        <div class="row g-3">
+                          <div class="col-md-6">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" value="rinadtabji@gmail.com" required>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" value="+ 212 612-542816">
+                          </div>
+                        </div>
+      
+                        <hr class="my-4">
+                        <div class="text-end">
+                          <button type="submit" class="btn btn-primary" style="background-color:rgb(135, 206, 235) !important; border:none;">Save Changes</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="tab-pane fade" id="privacy">
+                  <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
+                      <h5 class="mb-0"><i class="fas fa-eye-slash me-2"></i>Privacy Controls</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="list-group">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Activity Visibility</h6>
+                            <small class="text-muted">Who can see your learning progress</small>
+                          </div>
+                          <select class="form-select" style="width: 200px;">
+                            <option>Only Me</option>
+                            <option selected>My Therapists</option>
+                            <option>All Staff</option>
+                          </select>
+                        </div>
+      
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Data Sharing</h6>
+                            <small class="text-muted">Allow anonymous data for research</small>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="dataSharing">
+                          </div>
+                        </div>
+      
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Journal Visibility</h6>
+                            <small class="text-muted">Default sharing for new entries</small>
+                          </div>
+                          <select class="form-select" style="width: 200px;">
+                            <option selected>Private</option>
+                            <option>Share with Therapist</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="tab-pane fade" id="notifications">
+                  <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                      <h5 class="mb-0"><i class="fas fa-bell-slash me-2"></i>Notification Preferences</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                            <label class="form-check-label" for="emailNotifications">
+                              Email Notifications
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="smsNotifications">
+                            <label class="form-check-label" for="smsNotifications">
+                              SMS Notifications
+                            </label>
+                          </div>
+                        </div>
+      
+                        <div class="col-md-6">
+                          <label class="form-label">Notification Frequency</label>
+                          <select class="form-select">
+                            <option>Immediately</option>
+                            <option selected>Daily Digest</option>
+                            <option>Weekly Summary</option>
+                          </select>
+                        </div>
+      
+                        <div class="col-12">
+                          <hr>
+                          <h6>Specific Notifications</h6>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="appointmentReminders" checked>
+                            <label class="form-check-label" for="appointmentReminders">
+                              Appointment Reminders
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="journalPrompts" checked>
+                            <label class="form-check-label" for="journalPrompts">
+                              Daily Journal Prompts
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="tab-pane fade" id="security">
+                  <div class="card shadow-sm">
+                    <div class="card-header bg-warning text-dark">
+                      <h5 class="mb-0"><i class="fas fa-user-lock me-2"></i>Security Settings</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="list-group">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Password</h6>
+                            <small class="text-muted">Last changed 2 months ago</small>
+                          </div>
+                          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#passwordModal">
+                            Change Password
+                          </button>
+                        </div>
+      
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Two-Factor Authentication</h6>
+                            <small class="text-muted">Add an extra layer of security</small>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="twoFactorSwitch">
+                          </div>
+                        </div>
+      
+                        <div class="list-group-item">
+                          <h6 class="mb-2">Active Sessions</h6>
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                            <small>Chrome on Windows (Current)</small>
+                            <button class="btn btn-sm btn-outline-danger">Log Out</button>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <small>iPhone 14 Pro</small>
+                            <button class="btn btn-sm btn-outline-danger">Revoke</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="tab-pane fade" id="data">
+                  <div class="card shadow-sm">
+                    <div class="card-header bg-danger text-white">
+                      <h5 class="mb-0"><i class="fas fa-archive me-2"></i>Data Management</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="list-group">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Download Your Data</h6>
+                            <small class="text-muted">Request a copy of all your information</small>
+                          </div>
+                          <button class="btn btn-outline-primary">
+                            <i class="fas fa-download me-2"></i>Request Archive
+                          </button>
+                        </div>
+      
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Delete Account</h6>
+                            <small class="text-muted">Permanently remove your account and data</small>
+                          </div>
+                          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <i class="fas fa-trash-alt me-2"></i>Delete Account
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="passwordModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Change Password</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label class="form-label">Current Password</label>
+                  <input type="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">New Password</label>
+                  <input type="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Confirm New Password</label>
+                  <input type="password" class="form-control" required>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-primary">Update Password</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+              <h5 class="modal-title">Delete Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to permanently delete your account? This action:</p>
+              <ul>
+                <li>Will remove all your data from our systems</li>
+                <li>Cannot be undone</li>
+                <li>Will cancel any upcoming appointments</li>
+              </ul>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="confirmDelete">
+                <label class="form-check-label" for="confirmDelete">
+                  I understand this action is permanent
+                </label>
+              </div>
+              <div class="text-end">
+                <button type="button" class="btn btn-danger" disabled id="deleteButton">
+                  Delete Account Permanently
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.getElementById('confirmDelete').addEventListener('change', function() {
+          document.getElementById('deleteButton').disabled = !this.checked;
+        });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

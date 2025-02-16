@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+    <style>
+        .registration-card {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.1);
+            border: 2px solid #93b9fa;
+        }
+        .page-title {
+            color: #93b9fa;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .required:after {
+            content: "*";
+            color: red;
+            margin-left: 3px;
+        }
+        a[alt="back"]{
+            color: lightgray;
+        }
+        a[alt="back"]:hover{
+            color:rgb(153, 153, 153);
+        }
+        i{
+            padding-left:50px;
+            padding-top: 30px;
+            
+        }
+        .btn-primary{
+            background-color: #93b9fa !important;
+            border:none;
+        }
+
+        .btn-primary:hover{
+            background-color: #6499f5 !important;
+        }
+    </style>
+
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-light bg-white shadow-sm">
+        <div class="container">
+            <img src="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png" alt="logo" width="35px" id="logo" class="link" style="padding-left: 5px;" />
+        </div>
+    </nav>
+    <a href="/LOG/selection.html" alt="back"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="container">
+        <div class="registration-card bg-white">
+            <h1 class="page-title">Student Registration</h1>
+            
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-6">
+                    <label class="form-label required">First Name</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label required">Last Name</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label required">Email</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label required">Date of Birth</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label required">Password</label>
+                    <input type="password" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label required">Confirm Password</label>
+                    <input type="password" class="form-control" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label required">Primary Concerns</label>
+                    <textarea class="form-control" rows="3" required></textarea>
+                    <small class="form-text text-muted">Please describe what brings you to therapy</small>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label required">Emergency Contact</label>
+                    <input type="tel" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label required">Preferred Session Type</label>
+                    <select class="form-select" required>
+                        <option value="">Choose...</option>
+                        <option>Video Call</option>
+                        <option>Phone Call</option>
+                        <option>Chat</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" required>
+                        <label class="form-check-label">
+                            I agree to the <a href="#">privacy policy</a> and <a href="#">terms of service</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary btn-lg" type="submit"><a href='/studentPart/signed_in.html' class="text-decoration-none text-light">Create Student Account</a></button>
+                    <p class="text-muted">(It is advisable to click on the text inside the button)</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        (() => {
+          'use strict'
+          const forms = document.querySelectorAll('.needs-validation')
+          Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+        })()
+        </script>
+</body>
+</html>

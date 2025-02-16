@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/pictures/f5aa8c92-3bb6-404c-93c4-508b2d91f934-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body{
+            background-color: #f8f9fa;
+        }
+        .session-container {
+            background-color: #f8f9fa;
+            height: 100vh;
+        }
+        .conversation-window {
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .message {
+            margin-bottom: 15px;
+            max-width: 70%;
+        }
+        .student-message {
+            background: #e3f2fd;
+            border-radius: 15px 15px 15px 3px;
+            margin-right: auto;
+        }
+        .therapist-message {
+            background: #d4edda;
+            border-radius: 15px 15px 3px 15px;
+            margin-left: auto;
+            text-align: right;
+        }
+        .tools-panel {
+            background: white;
+            height: calc(100vh - 20px);
+            border-left: 1px solid #dee2e6;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .timestamp {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+        .mood-indicator {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .intervention-btn {
+            transition: all 0.2s ease;
+        }
+      @keyframes fadeIn{
+        from { opacity: 0; 
+              transform: translateY(10px); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="container-fluid session-container mt-3">
+        <a href="/TherapistPart/signedin_TH.html" alt="back" class="text-decoration-none ms-2" style="color:rgb(135, 206, 235) !important"><i class="fa-solid fa-arrow-left mx-2 mb-3" style="color:rgb(135, 206, 235) !important "></i>Back</a>
+        <div class="row">
+            <div class="col-md-8 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Session with Asmae (11th grade)</h4>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="text-muted" id="sessionTimer">00:00:00</div>
+                        <div class="mood-indicator bg-warning" id="currentMood"></div>
+                    </div>
+                </div>
+                
+                <div class="conversation-window shadow-sm" id="conversation">
+                    <div class="message student-message p-3">
+                        <div class="timestamp mb-1">Asmae - 10:00 AM</div>
+                        <div>"I've been really struggling with sleep lately. Every time I try to study, my mind just goes blank..."</div>
+                    </div>
+
+                    <div class="message therapist-message p-3">
+                        <div class="timestamp mb-1">You - 10:02 AM</div>
+                        <div>"That sounds challenging. Can you tell me more about when these study blocks typically happen?"</div>
+                    </div>
+                </div>
+
+                <div class="mt-3" style="animation: fadeIn 0.5s ease-in-out;">
+                    <div class="input-group">
+                        <textarea class="form-control" id="therapistInput" placeholder="Type your response..." rows="2"></textarea>
+                        <button class="btn btn-primary" id="sendButton" style="background-color: rgb(135, 206, 235)!important; border:none;">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="d-flex gap-2 mt-2">
+                        <button class="btn btn-sm btn-outline-secondary intervention-btn">
+                            <i class="fas fa-lightbulb"></i> Reflective Listening
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary intervention-btn">
+                            <i class="fas fa-question-circle"></i> Open Question
+                        </button>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" 
+                                    data-bs-toggle="dropdown">
+                                <i class="fas fa-notes-medical"></i> Note
+                            </button>
+                            <div class="dropdown-menu p-3" style="width: 300px;">
+                                <textarea class="form-control mb-2" placeholder="Clinical notes..."></textarea>
+                                <button class="btn btn-sm btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 p-3 tools-panel border" style="padding-bottom: 50%; box-sizing: border-box;">
+                <h5 class="mb-4">Session Tools</h5>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h6 class="card-title">Mood Tracking</h6>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-danger mood-btn" style="background-color: rgb(255, 123, 123) !important; border:none;">Angry</button>
+                            <button class="btn btn-sm btn-outline-warning mood-btn" style="border:none; background-color: antiquewhite;">Anxious</button>
+                            <button class="btn btn-sm btn-outline-primary mood-btn" style="background-color: rgb(175, 226, 255) !important; border:none;">Neutral</button>
+                            <button class="btn btn-sm btn-outline-success mood-btn" style="background-color: #d1ff8b; border:none;">Calm</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h6 class="card-title">Session Notes</h6>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="sessionNotes" style="height: 150px"></textarea>
+                            <label for="sessionNotes">Clinical observations</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Suggested Interventions</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <small>Consider exploring sleep hygiene practices</small>
+                            </li>
+                            <li class="list-group-item">
+                                <small>Assess for potential anxiety triggers</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let startTime = Date.now();
+        setInterval(() => {
+            const elapsed = Date.now() - startTime;
+            const hours = Math.floor(elapsed / 3600000);
+            const minutes = Math.floor((elapsed % 3600000) / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            document.getElementById('sessionTimer').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }, 1000);
+
+        document.querySelectorAll('.mood-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('currentMood').className = 
+                    `mood-indicator bg-${this.classList.contains('btn-outline-danger') ? 'danger' : 
+                      this.classList.contains('btn-outline-warning') ? 'warning' :
+                      this.classList.contains('btn-outline-primary') ? 'primary' : 'success'}`;
+            });
+        });
+
+        document.getElementById('sendButton').addEventListener('click', function() {
+            const input = document.getElementById('therapistInput');
+            if (input.value.trim()) {
+                const conversation = document.getElementById('conversation');
+                const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message therapist-message p-3';
+                messageDiv.innerHTML = `
+                    <div class="timestamp mb-1">You - ${time}</div>
+                    <div>"${input.value}"</div>
+                `;
+                conversation.appendChild(messageDiv);
+                
+                setTimeout(() => {
+                    const studentDiv = document.createElement('div');
+                    studentDiv.className = 'message student-message p-3';
+                    studentDiv.innerHTML = `
+                        <div class="timestamp mb-1">Alex - ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                        <div>"That's a good question. I think it mostly happens when..."</div>
+                    `;
+                    conversation.appendChild(studentDiv);
+                    conversation.scrollTop = conversation.scrollHeight;
+                }, 1500);
+
+                input.value = '';
+                conversation.scrollTop = conversation.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
