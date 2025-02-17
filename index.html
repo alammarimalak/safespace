@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Space - Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="icon" href="./pictures/icon.png">
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+      }
+      header{
+        margin-top: -30px;
+      }
+      body {
+        background-color: #f0f0eb;
+        padding-top: 80px; 
+      }
+      .dashboard-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        margin-top: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .card-custom {
+        background-color: beige;
+        color: black;
+      }
+      nav.navbar {
+        background-color: rgba(135, 206, 235);
+        padding: 15px;
+        z-index: 1050; 
+      }
+      .navbar-nav .nav-link,
+      .nav-link {
+        color: white !important;
+      }
+      .nav-link:hover,
+      .text-white:hover,
+      .navbar-toggler-icon:hover {
+        color: rgb(109, 189, 109) !important;
+      }
+      .nav-link i {
+        margin-right: 8px;
+      }
+      .navbar-toggler {
+        display: block !important;
+        margin-left: auto;
+      }
+      .navbar-toggler:hover {
+        cursor: pointer;
+      }
+      .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background-color: rgb(135, 206, 235);
+        width: 250px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+      .menu-overlay.show {
+        display: block;
+      }
+     
+      .link {
+        text-decoration: none;
+      }
+      
+      .overlay-content {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-shadow: 2px 2px 5px rgba(9, 0, 0, 0.5);
+      }
+      section {
+      padding: 40px 0;
+      }
+      .feature {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .feature img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .feature h3 {
+        color: rgba(135, 206, 235);
+      }
+      footer{
+        background-color: rgb(135, 206, 235);
+        padding: 45px 0;
+      }
+
+      div > ul > li > a > i.fa-facebook:hover {
+      color: rgb(0, 68, 255);
+      }
+
+      div > ul > li > a > i.fa-instagram:hover {
+        color: rgb(255, 0, 255);
+      }
+
+      div > ul > li > a > i.fa-whatsapp:hover {
+        color: rgb(8, 169, 43);
+      }
+
+      div > ul > li > a > i.fa-envelope:hover {
+        color: rgb(255, 0, 0);
+      }
+
+      #google_translate_element select {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    section:first-child{
+      animation: fadeIn 1s ease;
+    }
+
+    section:nth-child(2){
+      animation: fadeIn 2s ease;
+    }
+
+    section:last-child{
+      animation: faceIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="index.html">
+          <img src="./pictures/icon.png" alt="logo" width="35px" id="logo" class="link" style="padding-left: 5px;" />
+        </a>
+        <div class="d-flex align-items-center mx-auto">
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="index.html"><i class="fas fa-home"></i></a>
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="./officialpages/about.html"><i class="fas fa-solid fa-question"></i></a>
+          <a class="nav-link px-2 px-sm-2 px-xl-4" href="./officialpages/service.html"><i class="fas fa-solid fa-briefcase"></i></a>
+          <a class="nav-link ps-2 px-sm-2 px-xl-4" href="./officialpages/contact.html"><i class="fas fa-address-card"></i></a>
+        </div>
+        <div id="google_translate_element"></div>
+        <button class="navbar-toggler ms-2" type="button" id="menuToggle">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="menu-overlay" id="menuOverlay">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./LOG/login.html"><i class="fas fa-user"></i>Log in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./LOG/selection.html"><i class="fas fa-solid fa-right-to-bracket"></i>Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+      <section class="text-center text-light py-5 sectionSafeSpace" style="background-image: url('./pictures/bgimage.jpg'); background-size: cover; height: 80vh;">
+        <div class="container">
+            <h2 class="display-4 pt-5 fw-semibold">Welcome to SafeSpace</h2>
+            <p class="lead">1st Moroccan platform for mental well-being and support
+            </p>
+        </div>
+      </section>
+
+      <main class="container">
+        <section>
+          <div class="row feature align-items-center">
+            <div class="col-md-6">
+              <img src="./pictures/friends.jpg" alt="Your Digital Support">
+            </div>
+            <div class="col-md-6">
+              <h3>Your Digital Support</h3>
+              <p class="text-muted">
+                SafeSpace offers you 24/7 access to mental health resources tailored to your needs. 
+                Connect with licensed therapists and access tools designed to help you manage stress, 
+                anxiety, and more. Start your journey to mental clarity and strength today.
+              </p>
+            </div>
+          </div>
+        </section>
+    
+        <section>
+          <div class="row feature align-items-center">
+            <div class="col-md-6 order-md-2">
+              <img src="./pictures/pexels-rpnickson-2609463.jpg" alt="Mindset Growth">
+            </div>
+            <div class="col-md-6 order-md-1">
+              <h3>Where Your Mindset Grows</h3>
+              <p class="text-muted">
+                Discover interactive activities and personalized quizzes to enhance your emotional 
+                intelligence and mental resilience. Unlock your potential by setting growth-oriented 
+                goals and tracking your progress along the way.
+              </p>
+            </div>  
+          </div>
+        </section>
+    
+        <section>
+          <div class="row feature align-items-center">
+            <div class="col-md-6">
+              <img src="./pictures/pexels-minan1398-853168.jpg" alt="Your Best Community">
+            </div>
+            <div class="col-md-6">
+              <h3>Your Best Community</h3>
+              <p class="text-muted">
+                Join a supportive community of like-minded individuals who share your journey. 
+                Our forums and group activities provide a safe space to share experiences, 
+                gain insights, and build lasting connections.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    
+  <footer class="text-center text-light py-4">
+    <div class="container">
+        <ul class="list-unstyled d-flex justify-content-center mb-3">
+            <li class="mx-3">
+                <a href="www.facebook.com" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="www.instagram.com" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="www.google.com" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </li>
+            <li class="mx-3">
+                <a href="mailto:example@safespace.ma" class="text-light fs-4" style="cursor:not-allowed">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+        <p class="mb-0">&copy; 2025 SafeSpace Morocco. All Rights Reserved.</p>
+    </div>
+</footer>
+    <script src="scriptlang.js"></script>
+    <script>
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          document.getElementById("menuOverlay").classList.toggle("show");
+        });
+
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("menuOverlay");
+        const button = document.getElementById("menuToggle");
+        if (
+          !menu.contains(event.target) &&
+          !button.contains(event.target) &&
+          menu.classList.contains("show")
+        ) {
+          menu.classList.remove("show");
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
